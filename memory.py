@@ -1,14 +1,3 @@
-"""Memory, puzzle game of number pairs.
-
-Exercises:
-
-1. Count and print how many taps occur.
-2. Decrease the number of tiles to a 4x4 grid.
-3. Detect when all tiles are revealed.
-4. Center single-digit tile.
-5. Use letters instead of tiles.
-"""
-
 from random import *
 from turtle import *
 
@@ -18,6 +7,7 @@ car = path('car.gif')
 tiles = list(range(32)) * 2
 state = {'mark': None}
 hide = [True] * 64
+taps = 0  # Variable para contar el número de taps
 
 
 def square(x, y):
@@ -45,6 +35,8 @@ def xy(count):
 
 def tap(x, y):
     """Update mark and hidden tiles based on tap."""
+    global taps
+    taps += 1  # Incrementar el contador de taps
     spot = index(x, y)
     mark = state['mark']
 
@@ -57,7 +49,7 @@ def tap(x, y):
 
 
 def draw():
-    """Draw image and tiles."""
+    """Draw image, tiles, and taps count."""
     clear()
     goto(0, 0)
     shape(car)
@@ -76,6 +68,17 @@ def draw():
         goto(x + 2, y)
         color('black')
         write(tiles[mark], font=('Arial', 30, 'normal'))
+
+    # Mostrar el número de taps
+    up()
+    goto(-180, 180)
+    color('black')
+    write(f"Taps: {taps}", font=('Arial', 18, 'normal'))
+
+    # Detectar si todos los cuadros se han destapado
+    if all(not h for h in hide):
+        goto(-180, -180)
+        write("¡Juego terminado!", font=('Arial', 18, 'normal'))
 
     update()
     ontimer(draw, 100)
