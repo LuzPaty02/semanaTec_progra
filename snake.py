@@ -19,6 +19,7 @@ aim = vector(0, -10)
 colors = ['purple','blue','yellow','pink','orange']
 
 
+
 def change(x, y):
     """Change snake direction."""
     aim.x = x
