@@ -9,6 +9,8 @@ Exercises
 """
 
 from random import randrange
+from random import choice
+
 from turtle import *
 
 from freegames import square, vector
@@ -28,6 +30,20 @@ def inside(head):
     """Return True if head inside boundaries."""
     return -200 < head.x < 190 and -200 < head.y < 190
 
+def move_food():
+    """Move food randomly one step without leaving the window."""
+    directions = [(10, 0), (-10, 0), (0, 10), (0, -10)]  # Derecha, Izquierda, Arriba, Abajo
+    dx, dy = choice(directions)  # Elegir una dirección al azar
+
+    # Updates coordinates
+    food.x += dx
+    food.y += dy
+
+    # Food window boundaries 
+    if not inside(food):
+        # Si se sale, revertir el movimiento
+        food.x -= dx
+        food.y -= dy
 
 def move():
     """Move snake forward one segment."""
@@ -47,6 +63,8 @@ def move():
         food.y = randrange(-15, 15) * 10
     else:
         snake.pop(0)
+
+    move_food()
 
     clear()
 
