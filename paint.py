@@ -103,6 +103,7 @@ onscreenclick(tap)
 listen()
 
 onkey(undo, 'u')
+onkey(lambda: color('yellow'), 'Y')  # Added new color binding for yellow
 onkey(lambda: color('black'), 'K')
 onkey(lambda: color('white'), 'W')
 onkey(lambda: color('green'), 'G')
