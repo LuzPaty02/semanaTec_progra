@@ -179,18 +179,18 @@ def change(x, y):
         aim.x = x
         aim.y = y
 
+setup(420, 420, 370, 0)  # Set up the window size (width: 420, height: 420) and the starting position of the window (x: 370, y: 0)
+hideturtle()  # Hide the turtle cursor
+tracer(False)  # Turn off animation to manually control screen updates (for faster drawing)
+writer.goto(160, 160)  # Move the writer turtle to the position (160, 160) to write the score
+writer.color('white')  # Set the color of the writer turtle to white
+writer.write(state['score'])  # Write the current score stored in the 'state' dictionary
+listen()  # Set the turtle to listen for key presses
+onkey(lambda: change(5, 0), 'Right')  
+onkey(lambda: change(-5, 0), 'Left')  
+onkey(lambda: change(0, 5), 'Up')  
+onkey(lambda: change(0, -5), 'Down')  
+world()  # Call the function to set up the world (typically drawing the boundaries or background)
+move()  # Start the movement (this function would likely handle updating the turtle's position)
+done()  # Finish the program (prevent the window from closing immediately)
 
-setup(420, 420, 370, 0)
-hideturtle()
-tracer(False)
-writer.goto(160, 160)
-writer.color('white')
-writer.write(state['score'])
-listen()
-onkey(lambda: change(5, 0), 'Right')
-onkey(lambda: change(-5, 0), 'Left')
-onkey(lambda: change(0, 5), 'Up')
-onkey(lambda: change(0, -5), 'Down')
-world()
-move()
-done()

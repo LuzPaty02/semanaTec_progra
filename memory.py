@@ -86,12 +86,12 @@ def draw():
     ontimer(draw, 100)
 
 
-shuffle(tiles)
-setup(420, 420, 370, 0)
-addshape(car)
-hideturtle()
-tracer(False)
-onscreenclick(tap)
-draw()
-done()
+shuffle(tiles) # Mezclar las letras y números
+setup(420, 420, 370, 0) # Configurar dimensiones de la ventana
+addshape(car) # Agregar imagen del carro
+hideturtle() # Hides the turtle cursor so it doesn't appear on the screen while drawing or moving
+tracer(False) # Turn off animation to manually control screen updates (for faster drawing)
+onscreenclick(tap) # Bind the screen click event to the tap function
+draw() # Call the draw function to start the game
+done()# Finish the game
 
