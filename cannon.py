@@ -57,14 +57,23 @@ def move():
     targets.clear()
 
     for target in dupe:
+        # Check if the target has not collided
         if abs(target - ball) > 13:
+            # Reposition the target inside bounds (to loop)
+            if not inside(target):
+                target.x = 200
+                target.y = randrange(-150, 150)
+            # Add it to the target list
             targets.append(target)
 
     draw()
 
+    """
+    Delete so the game does not end
     for target in targets:
         if not inside(target):
             return
+    """
 
     ontimer(move, 50)
 
