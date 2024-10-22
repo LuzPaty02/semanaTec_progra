@@ -4,7 +4,7 @@ from turtle import *
 from freegames import path
 
 car = path('car.gif')
-# uso de letras y números para ayudar al usuario
+# Uso de letras y números para ayudar al usuario
 tiles = list('ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789') * 2
 state = {'mark': None}
 hide = [True] * 64
@@ -66,7 +66,7 @@ def draw():
     if mark is not None and hide[mark]:
         x, y = xy(mark)
         up()
-        # ajustar posición de inicio del texto para centrarlo
+        # Ajustar posición de inicio del texto para centrarlo
         goto(x + 18, y + 8)  
         color('black')
         write(tiles[mark], font=('Arial', 30, 'normal'))

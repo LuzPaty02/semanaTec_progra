@@ -19,7 +19,7 @@ path = Turtle(visible=False)
 writer = Turtle(visible=False)
 aim = vector(5, 0)
 pacman = vector(-40, -80)
-# aumenté cuánto se mueve cada fantasma
+# Changed how much each ghost moves
 ghosts = [
     [vector(-180, 160), vector(12, 0)], 
     [vector(-180, -160), vector(0, 12)],
@@ -27,7 +27,7 @@ ghosts = [
     [vector(100, -160), vector(-12, 0)],
 ]
 # fmt: off
-# modifiqué el diseño del tablero
+# Modified the design of the tiles
 tiles = [
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0,

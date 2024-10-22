@@ -18,7 +18,7 @@ from freegames import square, vector
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
-colors = ['purple','blue','yellow','pink','orange']
+colors = ['purple','blue','yellow','pink','orange'] # Array to change colors
 
 
 
@@ -84,10 +84,11 @@ hideturtle()
 tracer(False)
 listen()
 
-snake_color = choice(colors)
+# Chooses a color randomly for each part
+snake_color = choice(colors) 
 food_color = choice(colors)
-while food_color == snake_color:
-    food_color = choice(colors)
+while food_color == snake_color: # Checks that they are not the same
+    food_color = choice(colors) 
 
 onkey(lambda: change(10, 0), 'Right')
 onkey(lambda: change(-10, 0), 'Left')
