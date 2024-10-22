@@ -41,16 +41,21 @@ def square(start, end):
 
     end_fill()
 
-def circle(start, end):
-    """Draw a circle based on the distance between start and end points.
+# Added the function to draw a circle
+def draw_circle(start, end):
+    """Draw circle from start to end."""
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
 
-    Args:
-        start (vector): Starting point of the circle.
-        end (vector): Defines the radius of the circle.
-    """
-    # To be implemented
-    pass  # TODO: Implement circle drawing logic
+    radius = ((end.x - start.x) ** 2 + (end.y - start.y) ** 2) ** 0.5
+    goto(start.x, start.y - radius)
+    circle(radius)
 
+    end_fill()
+
+# Added the function to draw a rectangle
 def rectangle(start, end):
     """Draw a rectangle from the start to the end point.
 
@@ -59,7 +64,7 @@ def rectangle(start, end):
         end (vector): Defines the opposite corner of the rectangle.
     """
     up()
-    goto(start.x, start.y)
+    goto(start.x, start.y) 
     down()
     begin_fill()
 
@@ -74,6 +79,8 @@ def rectangle(start, end):
 
     end_fill()
 
+
+# Added the function to draw a triangle
 def triangle(start, end):
     """Draw an equilateral triangle from the start to the end point.
 
@@ -141,12 +148,10 @@ onkey(lambda: color('green'), 'G')
 onkey(lambda: color('blue'), 'B')
 onkey(lambda: color('red'), 'R')
 
-# Bind keys to different shape drawing functions
-onkey(lambda: store('shape', line), 'l')  # 'l' for line
-onkey(lambda: store('shape', square), 's')  # 's' for square
-onkey(lambda: store('shape', circle), 'c')  # 'c' for circle
-onkey(lambda: store('shape', rectangle), 'r')  # 'r' for rectangle
-onkey(lambda: store('shape', triangle), 't')  # 't' for triangle
+onkey(lambda: store('shape', line), 'l')
+onkey(lambda: store('shape', square), 's')
+onkey(lambda: store('shape', draw_circle), 'c')
+onkey(lambda: store('shape', rectangle), 'r')
+onkey(lambda: store('shape', triangle), 't')
 
-# Start the Turtle graphics loop
 done()

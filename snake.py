@@ -95,8 +95,8 @@ listen()
 # Randomly choose colors for the snake and food, ensuring they are different
 snake_color = choice(colors)
 food_color = choice(colors)
-while food_color == snake_color:
-    food_color = choice(colors)
+while food_color == snake_color: # Checks that they are not the same
+    food_color = choice(colors) 
 
 # Map arrow keys to change direction
 onkey(lambda: change(10, 0), 'Right')  # Move right
