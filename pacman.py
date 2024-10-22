@@ -131,18 +131,31 @@ def move():
     dot(20, 'yellow')
 
     for point, course in ghosts:
+        # Make the ghosts smarter: move towards Pacman
         if valid(point + course):
             point.move(course)
         else:
+            # Smarter ghost behavior: try to move towards Pacman
             options = [
-                vector(5, 0),
-                vector(-5, 0),
-                vector(0, 5),
-                vector(0, -5),
+                vector(5, 0),   # Move right
+                vector(-5, 0),  # Move left
+                vector(0, 5),   # Move up
+                vector(0, -5)   # Move down
             ]
-            plan = choice(options)
-            course.x = plan.x
-            course.y = plan.y
+
+            # Choose the direction that minimizes the distance to Pacman
+            min_distance = float('inf')
+            best_move = course
+
+            for option in options:
+                new_point = point + option
+                distance = abs(new_point - pacman)
+                if valid(new_point) and distance < min_distance:
+                    min_distance = distance
+                    best_move = option
+
+            course.x = best_move.x
+            course.y = best_move.y
 
         up()
         goto(point.x + 10, point.y + 10)
