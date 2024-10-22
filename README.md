@@ -12,7 +12,18 @@ Installing Free Python Games is simple using `pip`:
 ```bash
 $ python3 -m pip install freegames
 ```
+Make sure to install the following libraries 
 
+Turtle
+
+```bash
+$ python3 -m pip install turtle
+```
+Tkinter
+```bash
+
+$ python3 -m pip install tkinter
+```
 
 
 ## Games modified
