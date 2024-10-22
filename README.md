@@ -1,6 +1,6 @@
-# Free games Library games enhancement project
+# Free Games Library games enhancement project
 
-This is a repository that contains the enhanced functions for 5 free games files. 
+This is a repository that contains the enhanced functions for 5 free games files. [Link to the library.](https://grantjenks.com/docs/freegames/)
 ## Free Python Games Quickstart
 
 Free Python Games is a collection of Python games that are fun and easy to run. Follow this guide to get started!
@@ -53,6 +53,10 @@ projectile motion. Click the screen to fire your cannnonball. The cannonball pop
 
 ### Memory
 puzzle game of number pairs. Click a tile to reveal a number. Match two numbers and the tiles will disappear to reveal an image.
+- added tap counter
+- detect discovered taps
+- center digit in square
+- add letters to the data
 
 ## Running each game
 
@@ -75,8 +79,6 @@ Memory
 ```bash
 $ python3 python memory.py
 ```
-
-
 
 Cannon
 ```bash
