@@ -1,4 +1,4 @@
-# Free Games Library games enhancement project
+# Free Python Games Library games enhancement project
 
 This is a repository that contains the enhanced functions for 5 free games files. [Link to the library.](https://grantjenks.com/docs/freegames/)
 ## Free Python Games Quickstart
